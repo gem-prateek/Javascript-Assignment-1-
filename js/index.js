@@ -9,12 +9,19 @@ function Data() {
 }
 
 function createTable() {
+  let center = document.createElement("center");
+  let h2 = document.createElement("h2");
+  let text = document.createTextNode("Employee Table");
+  h2.appendChild(text);
+  center.appendChild(h2);
+
   let x = document.createElement("table");
   x.setAttribute("id", "demo");
-  x.setAttribute("style", " border: 2px solid black; padding: 5px; border-radius: 25px;");
-  document.body.appendChild(x);
-  const data = new Data();
+  x.setAttribute("style", " border: 2px solid black; padding: 5px; ");
 
+  document.body.appendChild(center);
+  center.appendChild(x);
+  const data = new Data();
 
   for (let i = 0; i < data.users.length; i++) {
     let row = document.createElement("tr");
