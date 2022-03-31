@@ -15,12 +15,12 @@ function createTable() {
   h2.appendChild(text);
   center.appendChild(h2);
 
-  let x = document.createElement("table");
-  x.setAttribute("id", "demo");
-  x.setAttribute("style", " border: 2px solid black; padding: 5px; ");
+  let table = document.createElement("table");
+  table.setAttribute("id", "demo");
+  table.setAttribute("style", " border: 2px solid black; padding: 5px; ");
 
   document.body.appendChild(center);
-  center.appendChild(x);
+  center.appendChild(table);
   const data = new Data();
 
   for (let i = 0; i < data.users.length; i++) {
@@ -28,22 +28,22 @@ function createTable() {
     row.setAttribute("style", "border: 1px solid black");
 
     for (let j = 0; j < data.elements.length; j++) {
-      let d = data.users[i];
+      let info = data.users[i];
       let column = document.createElement("td");
       column.setAttribute("style", "border: 2px solid black;padding: 5px");
 
-      if (d == "elements") {
+      if (info == "elements") {
         column.setAttribute(
           "style",
           "border: 2px solid black ; font-weight: bold ; padding: 5px"
         );
       }
-      let text = document.createTextNode(data[d][j]);
+      let text = document.createTextNode(data[info][j]);
       column.appendChild(text);
       row.appendChild(column);
     }
 
-    x.appendChild(row);
+    table.appendChild(row);
   }
 }
 
